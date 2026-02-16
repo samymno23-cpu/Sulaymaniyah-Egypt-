@@ -12,56 +12,70 @@
 
     <style>
         :root {
-            --primary: #192a56; 
-            --accent: #fbc531;
+            --primary: #192a56; /* كحلي فخم */
+            --accent: #fbc531;  /* ذهبي */
             --dark: #2f3640;
         }
         
         body { font-family: 'Cairo', sans-serif; overflow-x: hidden; }
         
+        /* شريط التنقل */
         .navbar { background-color: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); padding: 10px 0; }
-        .navbar-brand img { height: 55px; }
-        .nav-link { color: var(--primary) !important; font-weight: 700; font-size: 1.1rem; }
+        .navbar-brand img { height: 65px; } /* تكبير الشعار قليلاً ليظهر بوضوح */
+        .nav-link { color: var(--primary) !important; font-weight: 700; font-size: 1.1rem; margin: 0 10px; }
+        .nav-link:hover { color: var(--accent) !important; }
 
-        /* الهيرو سكشن */
+        /* الواجهة الرئيسية */
         .hero-section {
-            height: 90vh;
-            /* ربط صورة الخلفية (الغصن) */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG20260211111653.jpg');
+            height: 95vh;
+            /* خلفية صورة الغصن */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('IMG20260211111653.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
-            display: flex; align-items: center; text-align: center; color: white;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
         }
         
+        .hero-content h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; text-shadow: 2px 2px 4px #000; }
+        .hero-content p { font-size: 1.4rem; margin-bottom: 30px; color: #f1f1f1; }
+        
         .btn-custom {
-            background-color: var(--accent); color: #000; padding: 12px 40px; font-weight: bold;
-            border-radius: 30px; border: none; transition: 0.3s; text-decoration: none;
+            background-color: var(--accent); color: #000; padding: 15px 50px; font-weight: bold;
+            border-radius: 50px; border: none; transition: 0.3s; text-decoration: none; display: inline-block;
         }
-        .btn-custom:hover { background-color: #fff; transform: translateY(-3px); }
+        .btn-custom:hover { background-color: #fff; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* قسم الفيديو المحدث */
+        /* قسم الفيديو */
         .video-section { background-color: var(--primary); padding: 80px 0; color: white; text-align: center; }
         .video-container {
             position: relative; max-width: 900px; margin: 0 auto;
-            border: 4px solid var(--accent); border-radius: 10px; overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border: 4px solid var(--accent); border-radius: 15px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        /* كود جعل الفيديو متجاوب */
         video { width: 100%; height: auto; display: block; }
 
-        /* قسم الشهادات */
-        .stats-section {
-            background: url('IMG20260211111653.jpg') fixed center/cover;
-            position: relative; padding: 100px 0; color: white;
+        /* قسم الباركود */
+        .qr-section { background: #f8f9fa; padding: 60px 0; text-align: center; }
+        .qr-card {
+            background: white; padding: 30px; display: inline-block; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px dashed var(--primary);
         }
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(25, 42, 86, 0.9); }
-        .stat-item { position: relative; z-index: 2; margin-bottom: 30px; }
-        
-        footer { background: #1e272e; color: white; padding: 40px 0; border-top: 5px solid var(--accent); }
+        .qr-card img { width: 180px; height: 180px; }
+
+        /* الفوتر */
+        footer { background: #1e272e; color: white; padding: 50px 0; border-top: 5px solid var(--accent); }
+        .social-icon {
+            width: 45px; height: 45px; background: rgba(255,255,255,0.1); display: inline-flex;
+            align-items: center; justify-content: center; border-radius: 50%; color: white;
+            margin: 0 5px; transition: 0.3s; text-decoration: none;
+        }
+        .social-icon:hover { background: var(--accent); color: #000; transform: scale(1.1); }
+
+        /* واتساب عائم */
         .whatsapp-float {
-            position: fixed; bottom: 25px; left: 25px; background: #25d366; color: white;
-            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 30px; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: fixed; bottom: 30px; left: 30px; background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 35px; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.4); transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -69,86 +83,106 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="received_1395732098418600.jpeg" alt="شعار السليمانية">
-                <span style="font-weight:900; color:var(--primary); font-size:1.3rem; margin-right:10px;">السليمانية ايجيبت</span>
+                <img src="FB_IMG_1771204068108.jpg" alt="شعار السليمانية" onerror="this.src='received_1395732098418600.jpeg'">
+                <span style="font-weight:900; color:var(--primary); font-size:1.4rem; margin-right:10px;">السليمانية ايجيبت</span>
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video">المعرض</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <section class="hero-section">
-        <div class="container" data-aos="fade-up">
-            <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 20px;">الريادة في تصدير الزيتون</h1>
-            <p style="font-size: 1.5rem; margin-bottom: 30px;">40 عاماً من الخبرة في خشم القعود .. جودة تليق بالأسواق العالمية</p>
-            <a href="https://wa.me/201221663604" class="btn-custom">تواصل معنا للتصدير</a>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>الريادة في تصدير الزيتون</h1>
+            <p>40 عاماً من الخبرة في خشم القعود .. جودة عالمية من أرض مصرية</p>
+            <a href="https://wa.me/201221663604" class="btn-custom">
+                <i class="fab fa-whatsapp"></i> تواصل معنا للتصدير
+            </a>
         </div>
     </section>
 
-    <section class="py-5" style="background:#f9f9f9;">
+    <section id="about" class="py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6" data-aos="fade-left">
-                    <img src="IMG20260211111653.jpg" class="img-fluid rounded shadow" alt="مزارعنا">
+                    <img src="IMG20260211111653.jpg" class="img-fluid rounded shadow-lg" alt="مزارع السليمانية">
                 </div>
                 <div class="col-md-6" data-aos="fade-right">
-                    <h2 style="color:var(--primary); font-weight:800; border-bottom:3px solid var(--accent); display:inline-block;">من نحن</h2>
-                    <p class="mt-3 lead" style="text-align:justify;">
-                        السليمانية ايجيبت هي الذراع الزراعي المتطور لإنتاج الزيتون والمخللات في مصر. نمتلك ونشرف على مزارع واسعة في منطقة خشم القعود، ونطبق أحدث النظم الهندسية لضمان سلامة الغذاء وجودة المحصول، مما جعلنا الخيار الأول للمستوردين الباحثين عن التميز.
+                    <h2 style="color:var(--primary); font-weight:800; border-bottom:4px solid var(--accent); display:inline-block; margin-bottom:20px;">من نحن</h2>
+                    <p class="lead" style="text-align:justify; line-height:1.8;">
+                        <strong>السليمانية ايجيبت</strong> هي صرح زراعي صناعي متكامل. نمتلك ونشرف على مزارع واسعة في منطقة خشم القعود، ونطبق أحدث النظم الهندسية لضمان سلامة الغذاء.
+                        <br><br>
+                        نحن متخصصون في إنتاج وتجهيز الزيتون والمخللات وزيت الزيتون البكر، ونفخر بتصدير منتجاتنا للأسواق العربية والأوروبية، حاملين شعار "صنع في مصر" بأعلى معايير الجودة.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="video-section">
+    <section id="video" class="video-section">
         <div class="container" data-aos="zoom-in">
-            <h2 class="mb-5" style="font-weight:bold;">جولة حية من داخل المزرعة</h2>
+            <h2 class="mb-4" style="font-weight:900;">جولة حية من داخل المزرعة</h2>
+            <p class="mb-5 text-white-50">شاهد مراحل الإنتاج من الأرض إلى التعبئة</p>
             <div class="video-container">
                 <video controls loop poster="IMG20260211111653.jpg">
-                    <source src="video.mp4" type="video/mp4">
-                    متصفحك لا يدعم تشغيل الفيديو.
+                    <source src="1770053768521.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
                 </video>
             </div>
-            <p class="mt-3 text-white-50">رحلة المنتج من الأرض إلى التعبئة</p>
         </div>
     </section>
 
-    <section class="stats-section">
-        <div class="overlay"></div>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-4 stat-item" data-aos="flip-up">
-                    <i class="fas fa-tree fa-3x text-warning mb-3"></i>
-                    <h3>جودة عالمية</h3>
-                </div>
-                <div class="col-md-4 stat-item" data-aos="flip-up" data-aos-delay="100">
-                    <i class="fas fa-industry fa-3x text-warning mb-3"></i>
-                    <h3>تصنيع حديث</h3>
-                </div>
-                <div class="col-md-4 stat-item" data-aos="flip-up" data-aos-delay="200">
-                    <i class="fas fa-globe fa-3x text-warning mb-3"></i>
-                    <h3>تصدير دولي</h3>
-                </div>
+    <section class="qr-section">
+        <div class="container" data-aos="flip-up">
+            <h2 style="color:var(--primary); font-weight:800;">امسح الكود لزيارة موقعنا</h2>
+            <p class="text-muted mb-4">Scan QR Code to visit Website</p>
+            <div class="qr-card">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://samymno23-cpu.github.io/%D8%A7%D9%84%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86%D9%8A%D8%A9-%D9%85%D8%B5%D8%B1/" alt="QR Code">
+                <div style="margin-top:15px; font-weight:bold; color:var(--primary);">السليمانية ايجيبت</div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container text-center">
+    <footer id="contact">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <h4 class="text-warning">السليمانية ايجيبت</h4>
-                    <p>المقر: خشم القعود - مصر</p>
+                <div class="col-md-4 mb-4 text-center text-md-start">
+                    <h4 class="text-warning mb-3">السليمانية ايجيبت</h4>
+                    <p>المقر الرئيسي: خشم القعود - مصر</p>
+                    <p>تصدير - توريدات - إدارة مزارع</p>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <h4 class="text-warning">اتصل بنا</h4>
-                    <p>01221663604</p>
+                <div class="col-md-4 mb-4 text-center">
+                    <h4 class="text-warning mb-3">تابعنا</h4>
+                    <a href="https://www.facebook.com/share/183cjqQxh4/" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/201221663604" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4 text-center text-md-end">
+                    <h4 class="text-warning mb-3">تواصل معنا</h4>
+                    <p style="font-size:1.2rem; font-weight:bold;">01221663604</p>
                 </div>
             </div>
-            <p class="mt-3 text-secondary">© 2026 السليمانية ايجيبت | Eng. Samy Saad</p>
+            <div class="text-center mt-4 pt-3 border-top border-secondary">
+                <p>© 2026 السليمانية ايجيبت | Eng. Samy Saad</p>
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/201221663604" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/201221663604" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
