@@ -3,181 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="شركة السليمانية للتنمية الزراعية - إنتاج وتصدير الزيتون وزيت الزيتون">
     <title>السليمانية ايجيبت | هندسة زراعية متكاملة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* === إعدادات الهوية البصرية === */
         :root {
-            --primary-color: #1a4d2e; /* أخضر غامق - لون الزيتون الناضج */
-            --secondary-color: #ff9f1c; /* ذهبي - لون الزيت */
-            --text-color: #333333;
+            --primary-color: #1a4d2e;
+            --secondary-color: #ff9f1c;
             --bg-color: #f8f9fa;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-color); color: #333; overflow-x: hidden; }
 
-        /* === الهيدر (RTL Header) === */
         header {
-            background: #ffffff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            background: #ffffff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 1000;
         }
+        .brand { display: flex; align-items: center; gap: 10px; }
+        .brand img { height: 60px; object-fit: contain; }
+        .brand h1 { font-size: 1.2rem; color: var(--primary-color); margin: 0; }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .brand img {
-            height: 65px; /* ارتفاع الشعار */
-            object-fit: contain;
-        }
-
-        .brand h1 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin: 0;
-        }
-
-        /* === القسم الرئيسي (Hero Section) === */
+        /* تعديل هام: الخلفية الآن تقرأ اسم الملف الموجود في حسابك */
         .hero {
-            position: relative;
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
+            position: relative; height: 85vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; margin-top: 80px;
+            background-color: var(--primary-color); /* لون أخضر احتياطي عشان الكلام يبان لو الصورة لسه بتحمل */
         }
-
-        /* طبقة الخلفية مع الصورة الحقيقية */
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            /* هنا تم ربط الصورة باسم الملف الذي رفعته */
-            background: url('1000202947.jpg') no-repeat center center/cover;
-            filter: brightness(0.4); /* تعتيم خفيف لتوضيح الكلام */
-            z-index: -1;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            /* اسم ملف الغصن كما يظهر في صورتك */
+            background: url('IMG20260211111653.jpg') no-repeat center center/cover;
+            opacity: 0.6; /* تغميق الصورة عشان الكلام الأبيض يظهر بوضوح */
         }
-
-        .hero-content h2 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
+        .hero-content { position: relative; z-index: 2; padding: 20px; }
+        .hero-content h2 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        .hero-content p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 30px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
 
         .btn-main {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 12px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            display: inline-block;
+            background-color: var(--secondary-color); color: #fff; padding: 12px 40px; border-radius: 50px;
+            text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 159, 28, 0.4);
         }
 
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-        /* === قسم المعلومات (Info Section) === */
         .container { padding: 60px 10%; }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h3 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            position: relative;
-            display: inline-block;
-        }
+        .section-header { text-align: center; margin-bottom: 30px; }
+        .section-header h3 { color: var(--primary-color); font-size: 2rem; display: inline-block; border-bottom: 3px solid var(--secondary-color); padding-bottom: 10px;}
+        .about-text { font-size: 1.2rem; line-height: 1.8; text-align: justify; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        .section-header h3::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
+        footer { background: #111; color: #fff; padding: 30px; text-align: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none; }
 
-        .about-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            text-align: justify;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-right: 5px solid var(--primary-color);
-        }
-
-        /* === الفوتر === */
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 40px 10%;
-            text-align: center;
-        }
-
-        /* === زر الواتساب العائم === */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 9999;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .whatsapp-float:hover { background: #128C7E; transform: scale(1.1); }
-
-        /* === للموبايل === */
         @media (max-width: 768px) {
-            .hero-content h2 { font-size: 2rem; }
-            .hero-content p { font-size: 1.1rem; }
-            .brand h1 { display: none; } /* إخفاء الاسم وإبقاء الشعار فقط في الموبايل */
+            .hero-content h2 { font-size: 1.8rem; }
+            .brand h1 { display: none; }
         }
     </style>
 </head>
@@ -185,7 +64,7 @@
 
     <header>
         <div class="brand">
-            <img src="1000001082.jpg" alt="شعار السليمانية">
+            <img src="received_1395732098418600.jpeg" alt="شعار السليمانية" onerror="this.src='received_2012681462644173.jpeg'">
             <h1>السليمانية ايجيبت</h1>
         </div>
     </header>
@@ -206,14 +85,14 @@
             <p>
                 <strong>السليمانية ايجيبت:</strong> منظومة زراعية هندسية متكاملة. نحن لا نزرع الأرض فحسب، بل ندير عمليات الإنتاج وفق أحدث المعايير العلمية. 
                 <br><br>
-                من قلب مزارعنا في خشم القعود، نتخصص في إنتاج وتجهيز الزيتون وزيت الزيتون البكر الممتاز، واضعين نصب أعيننا هدفاً واحداً: تقديم منتج مصري بمواصفات عالمية يليق بالأسواق الدولية والمحلية على حد سواء.
+                من قلب مزارعنا في خشم القعود، نتخصص في إنتاج وتجهيز الزيتون وزيت الزيتون البكر الممتاز، واضعين نصب أعيننا هدفاً واحداً: تقديم منتج مصري بمواصفات عالمية.
             </p>
         </div>
     </section>
 
     <footer>
         <p>جميع الحقوق محفوظة © 2026 - شركة السليمانية ايجيبت</p>
-        <p style="color: #888; margin-top: 10px; font-size: 0.9rem;">Management & Development: Eng. Samy Saad</p>
+        <p>Eng. Samy Saad</p>
     </footer>
 
     <a href="https://wa.me/201221663604" class="whatsapp-float" target="_blank">
