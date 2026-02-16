@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السليمانية ايجيبت | ريادة التصدير الزراعي</title>
+    <title>السليمانية إيجيبت | للصناعات الغذائية والتصدير</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,26 +15,26 @@
             --primary: #192a56; 
             --accent: #fbc531;  
             --dark: #2f3640;
+            --olive-green: #3d6e28;
         }
         
         body { font-family: 'Cairo', sans-serif; overflow-x: hidden; }
         
         .navbar { background-color: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); padding: 10px 0; }
-        .navbar-brand img { height: 65px; } 
+        .navbar-brand img { height: 70px; } 
         .nav-link { color: var(--primary) !important; font-weight: 700; font-size: 1.1rem; margin: 0 10px; }
         .nav-link:hover { color: var(--accent) !important; }
 
         /* الهيرو سكشن */
         .hero-section {
             height: 95vh;
-            /* خلفية الغصن */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('IMG20260211111653.jpg');
             background-size: cover; background-position: center; background-attachment: fixed;
             display: flex; align-items: center; justify-content: center; text-align: center; color: white;
         }
         
-        .hero-content h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; text-shadow: 2px 2px 4px #000; }
-        .hero-content p { font-size: 1.4rem; margin-bottom: 30px; color: #f1f1f1; }
+        .hero-content h1 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; text-shadow: 2px 2px 4px #000; line-height: 1.4; }
+        .hero-content h2 { font-size: 1.8rem; color: var(--accent); margin-bottom: 30px; font-weight: 700; }
         
         .btn-custom {
             background-color: var(--accent); color: #000; padding: 15px 50px; font-weight: bold;
@@ -42,19 +42,30 @@
         }
         .btn-custom:hover { background-color: #fff; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* قسم معرض المنتجات (تم الإصلاح) */
-        .gallery-section { padding: 80px 0; background: #fff; }
+        /* قسم المنتجات التفصيلي (جديد) */
+        .products-details { padding: 80px 0; background-color: #f8f9fa; }
+        .product-card {
+            background: white; border-radius: 15px; padding: 30px; height: 100%;
+            border-top: 5px solid var(--olive-green); box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .product-card:hover { transform: translateY(-10px); }
+        .product-card h3 { color: var(--primary); font-weight: 800; margin-bottom: 20px; }
+        .product-list { list-style: none; padding: 0; }
+        .product-list li { margin-bottom: 12px; padding-right: 25px; position: relative; font-size: 1.1rem; }
+        .product-list li::before {
+            content: '\f00c'; font-family: 'Font Awesome 5 Free'; font-weight: 900;
+            position: absolute; right: 0; color: var(--accent);
+        }
+
+        /* معرض الصور */
         .gallery-item { 
             overflow: hidden; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            height: 280px; position: relative; border: 2px solid #eee; transition: 0.3s; cursor: pointer;
+            height: 250px; position: relative; border: 2px solid #eee; transition: 0.3s;
         }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-item:hover { transform: translateY(-10px); border-color: var(--accent); }
         .gallery-item:hover img { transform: scale(1.1); }
-        .item-caption {
-            position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7);
-            color: white; padding: 10px; text-align: center; font-weight: bold;
-        }
 
         /* قسم الفيديو */
         .video-section { background-color: var(--primary); padding: 80px 0; color: white; text-align: center; }
@@ -65,17 +76,16 @@
         }
         video { width: 100%; height: auto; display: block; }
 
-        /* قسم الخريطة (جديد) */
+        /* قسم الخريطة */
         .map-section { padding: 0; }
-        .map-container iframe { width: 100%; height: 450px; border: 0; }
+        .map-container iframe { width: 100%; height: 400px; border: 0; }
 
         /* قسم الباركود */
-        .qr-section { background: #f8f9fa; padding: 60px 0; text-align: center; }
+        .qr-section { background: #fff; padding: 60px 0; text-align: center; }
         .qr-card {
-            background: white; padding: 30px; display: inline-block; border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px dashed var(--primary);
+            background: white; padding: 20px; display: inline-block; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid var(--primary);
         }
-        .qr-card img { width: 180px; height: 180px; }
 
         /* الفوتر */
         footer { background: #1e272e; color: white; padding: 50px 0; border-top: 5px solid var(--accent); }
@@ -99,7 +109,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="FB_IMG_1771204068108.jpg" alt="شعار السليمانية" onerror="this.src='received_1395732098418600.jpeg'">
-                <span style="font-weight:900; color:var(--primary); font-size:1.4rem; margin-right:10px;">السليمانية ايجيبت</span>
+                <span style="font-weight:900; color:var(--primary); font-size:1.1rem; margin-right:10px;">السليمانية إيجيبت<br><small style="color:var(--olive-green);">للصناعات الغذائية والتصدير</small></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -107,8 +117,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">منتجاتنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#map">الموقع</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">نبذة عن الشركة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">منتجاتنا</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
                 </ul>
             </div>
@@ -117,51 +127,78 @@
 
     <section class="hero-section">
         <div class="hero-content" data-aos="fade-up">
-            <h1>الريادة في تصدير الزيتون</h1>
-            <p>40 عاماً من الخبرة في خشم القعود .. جودة عالمية من أرض مصرية</p>
+            <h1>السليمانية إيجيبت<br>للصناعات الغذائية والتصدير</h1>
+            <h2>من خير أرض مصر.. إلى مائدة شركائنا في ليبيا</h2>
             <a href="https://wa.me/201221663604" class="btn-custom">
                 <i class="fab fa-whatsapp"></i> تواصل معنا للتصدير
             </a>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="IMG20260211111653.jpg" class="img-fluid rounded shadow-lg" alt="مزارع السليمانية">
+                </div>
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2 style="color:var(--primary); font-weight:800; border-bottom:4px solid var(--accent); display:inline-block; margin-bottom:20px;">نبذة عن الشركة</h2>
+                    <p class="lead" style="text-align:justify; line-height:1.9;">
+                        تعتبر شركة <strong>السليمانية إيجيبت</strong> واحدة من الشركات المصرية الرائدة والمتخصصة في إنتاج وتصدير أجود أنواع زيت الزيتون والمخللات. نحن نفخر باعتمادنا على أفضل المزارع المصرية واتباع أحدث المعايير العالمية في التصنيع والتعبئة، لنقدم لعملائنا منتجاً يجمع بين المذاق الأصيل والجودة الفائقة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-details">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 style="color:var(--primary); font-weight:800;">منتجاتنا المتميزة</h2>
-                <p class="text-muted">ألبوم صور من إنتاج مزارعنا (زيتون - مخللات - زيت)</p>
+                <h2 style="color:var(--primary); font-weight:900; font-size: 2.5rem;">قائمة منتجاتنا</h2>
+                <p class="text-muted fs-5">نحن متخصصون في تلبية الطلبات الكبيرة وبمواصفات فنية دقيقة</p>
             </div>
             
             <div class="row">
-                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-item">
-                        <img src="IMG_2260216_032810.jpg" alt="زيتون مصري">
-                        <div class="item-caption">زيتون مائدة</div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="text-center"><i class="fas fa-oil-can fa-3x mb-3" style="color:var(--olive-green);"></i></div>
+                        <h3 class="text-center">زيت الزيتون</h3>
+                        <ul class="product-list">
+                            <li><strong>زيت زيتون بكر ممتاز (Extra Virgin):</strong> بنسبة حموضة أقل من 0.8%.</li>
+                            <li><strong>زيت زيتون بكر (Virgin):</strong> عالي الجودة.</li>
+                            <li><strong>خيارات التعبئة:</strong> متوفر بعبوات (صفيح، جرادل، أو تانكات) حسب رغبة المستورد.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-item">
-                        <img src="IMG_2260216_03%20211.jpg" alt="منتجات السليمانية">
-                        <div class="item-caption">مخللات فاخرة</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-item">
-                        <img src="IMG_2260216_0333140.jpg" alt="تصدير زيتون">
-                        <div class="item-caption">جودة التصدير</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="gallery-item">
-                        <img src="IMG_2260216_033459.jpg" alt="جودة عالمية">
-                        <div class="item-caption">إنتاجنا</div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="text-center"><i class="fas fa-lemon fa-3x mb-3" style="color:var(--olive-green);"></i></div>
+                        <h3 class="text-center">مخللات الزيتون</h3>
+                        <ul class="product-list">
+                            <li><strong>زيتون كلاماتا:</strong> متوفر بأحجام (جامبو، كبار، وسط).</li>
+                            <li><strong>زيتون أخضر:</strong> (عزيزي وتفاحي) بمذاق مصري أصيل.</li>
+                            <li><strong>تجهيزات خاصة:</strong> زيتون مخلي، شرائح، أو محشي حسب الطلب.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="video-section">
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h3 class="text-center mb-4" style="color:var(--primary);">معرض صور المنتجات</h3>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-3"><div class="gallery-item"><img src="IMG_2260216_032810.jpg"></div></div>
+                <div class="col-md-3 col-6 mb-3"><div class="gallery-item"><img src="IMG_2260216_03%20211.jpg"></div></div>
+                <div class="col-md-3 col-6 mb-3"><div class="gallery-item"><img src="IMG_2260216_0333140.jpg"></div></div>
+                <div class="col-md-3 col-6 mb-3"><div class="gallery-item"><img src="IMG_2260216_033459.jpg"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
         <div class="container" data-aos="zoom-in">
             <h2 class="mb-4" style="font-weight:900;">جولة حية من داخل المزرعة</h2>
             <div class="video-container">
@@ -175,7 +212,7 @@
 
     <section id="map" class="map-section">
         <div class="map-container">
-            <iframe src="https://maps.google.com/maps?q=Khashm%20El%20Qaoud&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            <iframe src="https://maps.google.com/maps?q=Wadi+El+Natrun+Alamein+Road&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
         </div>
     </section>
 
@@ -184,7 +221,7 @@
             <h2 style="color:var(--primary); font-weight:800;">امسح الكود لزيارة موقعنا</h2>
             <div class="qr-card">
                 <img id="dynamic-qr" src="" alt="جاري تحميل الباركود...">
-                <div style="margin-top:15px; font-weight:bold; color:var(--primary);">السليمانية ايجيبت</div>
+                <div style="margin-top:15px; font-weight:bold; color:var(--primary);">السليمانية إيجيبت</div>
             </div>
         </div>
     </section>
@@ -192,22 +229,23 @@
     <footer id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4 text-center text-md-start">
-                    <h4 class="text-warning mb-3">السليمانية ايجيبت</h4>
-                    <p>المقر الرئيسي: خشم القعود - مصر</p>
+                <div class="col-md-5 mb-4 text-center text-md-start">
+                    <h4 class="text-warning mb-3">السليمانية إيجيبت</h4>
+                    <p><i class="fas fa-map-marker-alt ms-2"></i> <strong>المقر الرئيسي:</strong> طريق وادي النطرون العلمين - مدخل العدالة</p>
+                    <p class="text-white-50">متخصصون في التصدير وتوريدات المصانع</p>
                 </div>
-                <div class="col-md-4 mb-4 text-center">
+                <div class="col-md-3 mb-4 text-center">
                     <h4 class="text-warning mb-3">تابعنا</h4>
                     <a href="https://www.facebook.com/share/183cjqQxh4/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://wa.me/201221663604" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 <div class="col-md-4 mb-4 text-center text-md-end">
                     <h4 class="text-warning mb-3">تواصل معنا</h4>
-                    <p style="font-size:1.2rem; font-weight:bold;">01221663604</p>
+                    <p style="font-size:1.4rem; font-weight:bold;">01221663604</p>
                 </div>
             </div>
             <div class="text-center mt-4 pt-3 border-top border-secondary">
-                <p>© 2026 السليمانية ايجيبت | Eng. Samy Saad</p>
+                <p>© 2026 السليمانية إيجيبت | Eng. Samy Saad</p>
             </div>
         </div>
     </footer>
