@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السليمانية ايجيبت | هندسة زراعية وتصدير</title>
+    <title>السليمانية ايجيبت | ريادة التصدير الزراعي</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,66 +12,51 @@
 
     <style>
         :root {
-            --primary: #192a56; /* كحلي فخم مثل موقع النيل */
-            --accent: #fbc531;  /* ذهبي */
+            --primary: #192a56; 
+            --accent: #fbc531;
             --dark: #2f3640;
         }
         
         body { font-family: 'Cairo', sans-serif; overflow-x: hidden; }
         
-        /* شريط التنقل */
-        .navbar { background-color: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); padding: 15px 0; }
-        .navbar-brand img { height: 60px; }
-        .nav-link { color: var(--primary) !important; font-weight: 700; margin: 0 10px; font-size: 1.1rem; }
-        .nav-link:hover { color: var(--accent) !important; }
+        .navbar { background-color: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); padding: 10px 0; }
+        .navbar-brand img { height: 55px; }
+        .nav-link { color: var(--primary) !important; font-weight: 700; font-size: 1.1rem; }
 
-        /* الشاشة الرئيسية */
+        /* الهيرو سكشن */
         .hero-section {
             height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('IMG20260211111653.jpg'); /* صورتك */
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
+            /* ربط صورة الخلفية (الغصن) */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG20260211111653.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; align-items: center; text-align: center; color: white;
         }
         
-        .hero-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; text-shadow: 2px 2px 4px #000; }
         .btn-custom {
             background-color: var(--accent); color: #000; padding: 12px 40px; font-weight: bold;
-            border-radius: 30px; border: none; transition: 0.3s; text-decoration: none; display: inline-block;
+            border-radius: 30px; border: none; transition: 0.3s; text-decoration: none;
         }
-        .btn-custom:hover { transform: translateY(-5px); background-color: #fff; }
+        .btn-custom:hover { background-color: #fff; transform: translateY(-3px); }
 
-        /* قسم عن الشركة */
-        .about-section { padding: 80px 0; background-color: #f5f6fa; }
-        .section-title { color: var(--primary); font-weight: 800; margin-bottom: 30px; position: relative; display: inline-block; }
-        .section-title::after { content: ''; display: block; width: 50%; height: 4px; background: var(--accent); margin-top: 10px; }
-
-        /* قسم الفيديو */
+        /* قسم الفيديو المحدث */
         .video-section { background-color: var(--primary); padding: 80px 0; color: white; text-align: center; }
-        .video-wrapper { 
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 900px; margin: 0 auto; 
-            border: 4px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .video-container {
+            position: relative; max-width: 900px; margin: 0 auto;
+            border: 4px solid var(--accent); border-radius: 10px; overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        /* كود جعل الفيديو متجاوب */
+        video { width: 100%; height: auto; display: block; }
 
-        /* قسم الشهادات والأرقام */
+        /* قسم الشهادات */
         .stats-section {
             background: url('IMG20260211111653.jpg') fixed center/cover;
             position: relative; padding: 100px 0; color: white;
         }
         .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(25, 42, 86, 0.9); }
-        .stat-item { position: relative; z-index: 2; text-align: center; margin-bottom: 30px; }
-        .stat-item i { font-size: 3rem; color: var(--accent); margin-bottom: 15px; }
-        .stat-item h3 { font-size: 2.5rem; font-weight: bold; }
-
-        /* الفوتر */
-        footer { background: #1e272e; color: white; padding: 50px 0; border-top: 5px solid var(--accent); }
+        .stat-item { position: relative; z-index: 2; margin-bottom: 30px; }
         
-        /* واتساب */
+        footer { background: #1e272e; color: white; padding: 40px 0; border-top: 5px solid var(--accent); }
         .whatsapp-float {
             position: fixed; bottom: 25px; left: 25px; background: #25d366; color: white;
             width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -85,57 +70,30 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="received_1395732098418600.jpeg" alt="شعار السليمانية">
-                <span style="font-weight:900; color:var(--primary); font-size:1.5rem; margin-right:10px;">السليمانية ايجيبت</span>
+                <span style="font-weight:900; color:var(--primary); font-size:1.3rem; margin-right:10px;">السليمانية ايجيبت</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">عن الشركة</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">منتجاتنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
     <section class="hero-section">
         <div class="container" data-aos="fade-up">
-            <h1 class="hero-title">خبرة هندسية في زراعة الزيتون</h1>
-            <p class="lead mb-4" style="font-size: 1.5rem; font-weight: 500;">
-                40 عاماً من الخبرة في خشم القعود .. نزرع الجودة ونصدر الثقة للعالم
-            </p>
-            <a href="https://wa.me/201221663604" class="btn-custom">
-                <i class="fab fa-whatsapp"></i> تواصل معنا للتصدير
-            </a>
+            <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 20px;">الريادة في تصدير الزيتون</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">40 عاماً من الخبرة في خشم القعود .. جودة تليق بالأسواق العالمية</p>
+            <a href="https://wa.me/201221663604" class="btn-custom">تواصل معنا للتصدير</a>
         </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section class="py-5" style="background:#f9f9f9;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6" data-aos="fade-left">
-                    <img src="IMG20260211111653.jpg" class="img-fluid rounded shadow-lg" alt="مزارعنا">
+                    <img src="IMG20260211111653.jpg" class="img-fluid rounded shadow" alt="مزارعنا">
                 </div>
                 <div class="col-md-6" data-aos="fade-right">
-                    <h2 class="section-title">من نحن</h2>
-                    <p style="line-height: 1.8; font-size: 1.1rem; text-align: justify;">
-                        تأسست شركة السليمانية ايجيبت لتكون صرحاً رائداً في القطاع الزراعي المصري. نحن متخصصون في إدارة المزارع وإنتاج الزيتون والمخللات وزيت الزيتون البكر.
-                        <br><br>
-                        نعتمد على التكنولوجيا الهندسية الحديثة في إدارة مزارعنا بمنطقة خشم القعود، مما يضمن خروج منتج نهائي يطابق المواصفات العالمية (Global GAP) وصالح للتصدير لأوروبا والدول العربية.
+                    <h2 style="color:var(--primary); font-weight:800; border-bottom:3px solid var(--accent); display:inline-block;">من نحن</h2>
+                    <p class="mt-3 lead" style="text-align:justify;">
+                        السليمانية ايجيبت هي الذراع الزراعي المتطور لإنتاج الزيتون والمخللات في مصر. نمتلك ونشرف على مزارع واسعة في منطقة خشم القعود، ونطبق أحدث النظم الهندسية لضمان سلامة الغذاء وجودة المحصول، مما جعلنا الخيار الأول للمستوردين الباحثين عن التميز.
                     </p>
-                    <div class="d-flex mt-4">
-                        <div class="me-4 text-center">
-                            <i class="fas fa-check-circle fa-2x text-warning mb-2"></i>
-                            <h5 style="font-weight:bold;">جودة عالمية</h5>
-                        </div>
-                        <div class="me-4 text-center">
-                            <i class="fas fa-shipping-fast fa-2x text-warning mb-2"></i>
-                            <h5 style="font-weight:bold;">تصدير سريع</h5>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -143,77 +101,57 @@
 
     <section class="video-section">
         <div class="container" data-aos="zoom-in">
-            <h2 class="mb-5" style="font-weight:bold;">جولة داخل مصانعنا ومزارعنا</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            <h2 class="mb-5" style="font-weight:bold;">جولة حية من داخل المزرعة</h2>
+            <div class="video-container">
+                <video controls loop poster="IMG20260211111653.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
             </div>
+            <p class="mt-3 text-white-50">رحلة المنتج من الأرض إلى التعبئة</p>
         </div>
     </section>
 
     <section class="stats-section">
         <div class="overlay"></div>
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
-                <div class="col-md-3 stat-item" data-aos="flip-left">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>+20</h3>
-                    <p>سنة خبرة</p>
+                <div class="col-md-4 stat-item" data-aos="flip-up">
+                    <i class="fas fa-tree fa-3x text-warning mb-3"></i>
+                    <h3>جودة عالمية</h3>
                 </div>
-                <div class="col-md-3 stat-item" data-aos="flip-left" data-aos-delay="100">
-                    <i class="fas fa-tree"></i>
-                    <h3>+500</h3>
-                    <p>فدان مزروع</p>
+                <div class="col-md-4 stat-item" data-aos="flip-up" data-aos-delay="100">
+                    <i class="fas fa-industry fa-3x text-warning mb-3"></i>
+                    <h3>تصنيع حديث</h3>
                 </div>
-                <div class="col-md-3 stat-item" data-aos="flip-left" data-aos-delay="200">
-                    <i class="fas fa-users"></i>
-                    <h3>+100</h3>
-                    <p>عميل دولي</p>
-                </div>
-                <div class="col-md-3 stat-item" data-aos="flip-left" data-aos-delay="300">
-                    <i class="fas fa-award"></i>
-                    <h3>ISO</h3>
-                    <p>شهادات جودة</p>
+                <div class="col-md-4 stat-item" data-aos="flip-up" data-aos-delay="200">
+                    <i class="fas fa-globe fa-3x text-warning mb-3"></i>
+                    <h3>تصدير دولي</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
+    <footer>
+        <div class="container text-center">
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h4 class="text-warning mb-3">السليمانية ايجيبت</h4>
-                    <p>الرائدة في إنتاج وتصدير الزيتون وزيت الزيتون البكر الممتاز.</p>
+                <div class="col-md-6 mb-3">
+                    <h4 class="text-warning">السليمانية ايجيبت</h4>
+                    <p>المقر: خشم القعود - مصر</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h4 class="text-warning mb-3">تواصل معنا</h4>
-                    <p><i class="fas fa-phone ms-2"></i> 01221663604</p>
-                    <p><i class="fas fa-map-marker-alt ms-2"></i> خشم القعود، مصر</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4 class="text-warning mb-3">تابعنا</h4>
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+                <div class="col-md-6 mb-3">
+                    <h4 class="text-warning">اتصل بنا</h4>
+                    <p>01221663604</p>
                 </div>
             </div>
-            <div class="text-center mt-4 pt-3 border-top border-secondary">
-                <p>جميع الحقوق محفوظة © 2026 السليمانية ايجيبت | Eng. Samy Saad</p>
-            </div>
+            <p class="mt-3 text-secondary">© 2026 السليمانية ايجيبت | Eng. Samy Saad</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/201221663604" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/201221663604" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, /* سرعة الأنيميشن */
-            once: true
-        });
-    </script>
+    <script>AOS.init();</script>
 </body>
 </html>
