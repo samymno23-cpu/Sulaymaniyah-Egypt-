@@ -1,0 +1,180 @@
+/* --- الإعدادات الأساسية --- */
+:root {
+    --primary-blue: #192a56; /* أزرق كحلي فخم للثقة والتصدير */
+    --accent-gold: #fbc531; /* لون دهبي للجودة العالية */
+    --olive-green: #3d6e28; /* أخضر زيتوني لهوية المنتج */
+    --light-bg: #f9f9f9; /* لون خلفية فاتح ومريح للعين */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط مناسب للقراءة */
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    position: relative; /* مهم عشان العلامة المائية */
+}
+
+/* --- كود العلامة المائية (Watermark) --- */
+body::before {
+    content: "";
+    position: fixed; /* ثابتة أثناء النزول بالصفحة */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('logo.png'); /* تأكد من وجود صورة اللوجو بنفس الاسم */
+    background-repeat: repeat; 
+    background-size: 250px; /* حجم اللوجو المتكرر */
+    opacity: 0.04; /* شفافية خفيفة جداً لعدم إزعاج القراءة */
+    z-index: -1; /* خلف كل العناصر */
+    pointer-events: none;
+}
+
+/* --- شريط التنقل (Header & Nav) --- */
+header {
+    background-color: var(--primary-blue);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-align: center;
+}
+
+.logo img {
+    max-height: 60px; /* حجم اللوجو الأساسي في الهيدر */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-gold); /* يتغير للدهبي عند المرور عليه */
+}
+
+/* زر تغيير اللغة */
+nav ul li:last-child a {
+    background-color: var(--olive-green);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav ul li:last-child a:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+}
+
+/* --- واجهة الموقع (Hero Section) --- */
+#hero {
+    background: linear-gradient(rgba(25, 42, 86, 0.8), rgba(61, 110, 40, 0.8)), url('hero-bg.jpg'); /* خلفية متدرجة فوق صورة لو حبيت تضيف صورة مزارع */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--accent-gold);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--text-light);
+}
+
+/* --- الأقسام العامة (من نحن، المنتجات، إلخ) --- */
+section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #444;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* --- التجاوب مع الموبايل (Responsive Design) --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 10px;
+    }
+    #hero h1 {
+        font-size: 2rem;
+    }
+    #hero p {
+        font-size: 1.2rem;
+    }
+}
