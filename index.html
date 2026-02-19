@@ -3,121 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السليمانية إيجيبت - المهندس سامي سعد</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>السليمانية إيجيبت</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #D4AF37; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.03); }
         body {
-            margin: 0; font-family: 'Cairo', sans-serif; background-color: var(--dark); color: #fff;
-            /* العلامة المائية للزيتون في الخلفية */
-            background-image: linear-gradient(rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.92)), url('https://www.transparenttextures.com/patterns/leaves.png');
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #0a0a0a;
+            /* الخلفية العلامة المائية للزيتون */
+            background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                              url('https://www.transparenttextures.com/patterns/leaves.png');
             background-attachment: fixed;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        
-        /* الشعار واللغة */
-        .top-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-        .logo img { max-width: 150px; filter: drop-shadow(0 0 8px var(--gold)); }
-        .lang-btn { color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 5px; }
-
-        /* الكروت الزجاجية */
-        .glass-card {
-            background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            color: #fff;
         }
 
-        /* النبذة التعريفية */
-        .bio-section h2 { color: var(--gold); font-size: 2em; margin-bottom: 20px; border-right: 5px solid var(--gold); padding-right: 15px; }
-        .bio-content { line-height: 1.8; font-size: 1.1em; }
-        .highlight { color: var(--gold); font-weight: bold; }
+        .header-logo {
+            text-align: center;
+            padding: 30px 0;
+        }
+        .header-logo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #D4AF37;
+        }
 
-        /* معرض المنتجات */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .product-card { text-align: center; }
-        .product-card img { width: 100%; border-radius: 15px; border: 1px solid var(--gold); margin-bottom: 15px; transition: 0.3s; }
-        .product-card img:hover { transform: scale(1.03); }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        /* التواصل والباركود */
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: center; }
-        .contact-info p { font-size: 1.1em; margin: 15px 0; display: flex; align-items: center; gap: 10px; }
-        .contact-info i { color: var(--gold); font-size: 1.3em; }
-        .barcode-area { text-align: center; background: #fff; padding: 15px; border-radius: 15px; border: 3px solid var(--gold); }
-        .barcode-area img { max-width: 160px; }
+        .video-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 40px;
+        }
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-        .btn-wa { background: var(--gold); color: #000; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: 900; display: inline-block; margin-top: 20px; }
+        .section-title {
+            color: #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .section-title::after {
+            content: "";
+            width: 5px;
+            height: 30px;
+            background: #D4AF37;
+        }
 
-        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } .barcode-area { order: -1; } }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .contact-info p {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        .contact-info i {
+            color: #D4AF37;
+        }
+
+        .barcode-box {
+            text-align: center;
+            padding: 10px;
+        }
+        .barcode-box img {
+            width: 150px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .btn-fast {
+            background: #D4AF37;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-card { flex-direction: column; text-align: center; }
+            .contact-info p { justify-content: center; }
+            .barcode-box { margin-top: 20px; }
+        }
     </style>
 </head>
 <body>
 
+    <div class="header-logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
     <div class="container">
-        <div class="top-nav">
-            <div class="logo"><img src="logo.png" alt="شعار السليمانية"></div>
-            <a href="#" class="lang-btn">English</a>
-        </div>
-
-        <header style="text-align: center; padding: 40px 0;">
-            <h1 style="color: var(--gold); font-size: 2.5em; margin: 0;">السليمانية إيجيبت</h1>
-            <p style="font-size: 1.3em; color: #ccc;">تحت إشراف المهندس/ سامي سعد</p>
-        </header>
-
-        <div class="glass-card bio-section">
-            <h2><i class="fas fa-user-tie"></i> النبذة التعريفية والخبرات</h2>
-            <div class="bio-content">
-                <p>بقيادة <span class="highlight">المهندس سامي سعد</span>، خبير الإدارة الزراعية وصاحب المسيرة الممتدة منذ العمل في شركة <span class="highlight">أوراسكوم (2017-2019)</span>. يشرف حالياً على مساحات زراعية شاسعة تتجاوز <span class="highlight">1000 فدان</span> في مناطق وادي النطرون والعلمين والمُغرة.</p>
-                <p>حاصل على <span class="highlight">شهادة دولية من المجلس الدولي للزيتون</span> وشهادة من مركز البحوث الزراعية لرفع جودة الإنتاج. تم تكريمه بـ <span class="highlight">درع التميز</span> لثلاث دورات متتالية في مؤتمر "من سيزرع المليون"، مما يضمن للمستوردين شريكاً يتمتع بأعلى درجات الخبرة الفنية والمصداقية.</p>
-            </div>
-        </div>
-
-        <div class="glass-card">
-            <h2 style="color: var(--gold); margin-bottom: 30px; text-align: center;">منتجاتنا للتصدير</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="1.jpg" alt="زيت زيتون بكر ممتاز">
-                    <h3>زيت زيتون بكر ممتاز</h3>
-                    <p>عصرة أولى، حموضة أقل من 0.8%</p>
-                </div>
-                <div class="product-card">
-                    <img src="3.jpg" alt="زيتون مائدة فاخر">
-                    <h3>زيتون مائدة فاخر</h3>
-                    <p>أصناف التفاحي، العجيزي، والكالاماتا</p>
-                </div>
-                <div class="product-card">
-                    <img src="4.jpg" alt="تجهيزات التصدير">
-                    <h3>تجهيزات التصدير</h3>
-                    <p>تعبئة قياسية للسوق الليبي والدولي</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="glass-card" style="text-align: center;">
-            <h2 style="color: var(--gold);"><i class="fas fa-video"></i> جولة في المزارع</h2>
-            <video controls style="width: 100%; border-radius: 15px; border: 1px solid var(--gold); max-width: 800px;">
+        <div class="video-section">
+            <video controls>
                 <source src="1770053768521.mp4" type="video/mp4">
             </video>
         </div>
 
-        <div class="glass-card footer-grid">
+        <div class="section-title">
+            تواصل معنا <i class="fas fa-address-card"></i>
+        </div>
+
+        <div class="contact-card">
             <div class="contact-info">
-                <h2 style="text-align: right; border: none; padding: 0;">تواصل معنا</h2>
-                <p><i class="fas fa-map-marker-alt"></i> طريق وادي النطرون العلمين - مدخل العدالة، ومزارع خشم القعود.</p>
-                <p><i class="fas fa-phone-alt"></i> المبيعات والتصدير: <span dir="ltr">012 2166 3604</span></p>
-                <p><i class="fas fa-envelope"></i> info@alsuleimania.com</p>
-                <a href="https://wa.me/201221663604" class="btn-wa"><i class="fab fa-whatsapp"></i> واتساب للتصدير والطلبات</a>
+                <p><strong>المواقع:</strong> طريق وادي النطرون العلمين - مدخل العدالة. ومزارع خشم القعود. <i class="fas fa-map-marker-alt"></i></p>
+                <p><strong>المبيعات والتصدير:</strong> 012 2166 3604 <i class="fas fa-phone"></i></p>
+                <p><strong>البريد الإلكتروني:</strong> info@alsuleimania.com <i class="fas fa-envelope"></i></p>
+                <a href="https://wa.me/201221663604" class="btn-fast">تواصل سريع للطلبات</a>
             </div>
-            
-            <div class="barcode-area">
-                <p style="color: #000; font-weight: bold; margin-bottom: 10px;">مسح الباركود (البروكود)</p>
-                <img src="FB_IMG_1771204068108.jpg" alt="الباركود الخاص بنا">
+
+            <div class="barcode-box">
+                <img src="FB_IMG_1771204068108.jpg" alt="Barcode">
             </div>
         </div>
     </div>
-
-    <footer style="text-align: center; padding: 30px; color: #555;">
-        &copy; 2026 جميع الحقوق محفوظة لشركة السليمانية إيجيبت
-    </footer>
 
 </body>
 </html>
