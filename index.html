@@ -3,396 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السليمانية إيجيبت | تصدير مخللات الزيتون وزيت الزيتون</title>
-    <meta name="description" content="السليمانية إيجيبت رائدة في تصدير مخللات الزيتون (عجيزي، بيكوال، منزانيلو، كالاماتا، دولسي) وزيت الزيتون البكر. مقرنا طريق وادي النطرون العلمين.">
-    <meta name="keywords" content="مخللات زيتون, تصدير زيتون, عجيزي, بيكوال, منزانيلو, كالاماتا, دولسي, السليمانية إيجيبت, طريق وادي النطرون العلمين">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>السليمانية إيجيبت - لتصدير الزيتون</title>
     <style>
+        /* إعدادات الألوان والخطوط */
         :root {
-            --primary-blue: #14213d; /* أزرق داكن أكثر فخامة */
-            --accent-gold: #fca311; /* ذهبي دافئ ومميز */
-            --olive-green: #4b7f32; /* أخضر زيتوني زاهي */
-            --light-bg: #f8f9fa;
+            --primary-color: #4A5D23; /* أخضر زيتوني */
+            --secondary-color: #D4AF37; /* ذهبي */
+            --text-color: #333;
+            --bg-color: #f9f9f9;
         }
-
-        * {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif; /* تطبيق الخط الجديد */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-
-        body {
-            background-color: var(--light-bg);
-            color: #333;
-            line-height: 1.8;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* الخلفية المائية */
-        body::before {
-            content: "";
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('1.jpg'); 
-            background-size: cover; 
-            background-position: center;
-            opacity: 0.06; 
-            z-index: -1; 
-            pointer-events: none; 
-        }
-
-        /* شريط التنقل */
+        
+        /* القائمة الرئيسية */
         header {
-            background-color: rgba(20, 33, 61, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 12px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            background-color: #fff;
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
-        .logo img {
-            max-height: 60px;
-            border-radius: 8px;
-            border: 2px solid var(--accent-gold);
-            padding: 2px;
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            align-items: center;
+            margin: 0;
+            padding: 0;
         }
-
         nav ul li {
-            margin-right: 20px;
+            margin: 0 15px;
         }
-
         nav ul li a {
-            color: #fff;
             text-decoration: none;
+            color: var(--text-color);
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            position: relative;
+            transition: color 0.3s;
         }
-
         nav ul li a:hover {
-            color: var(--accent-gold);
+            color: var(--primary-color);
         }
 
-        /* زر اللغة */
-        .lang-btn {
-            background: linear-gradient(45deg, var(--olive-green), #3d6e28);
-            padding: 8px 18px;
-            border-radius: 25px;
-            color: white !important;
-            box-shadow: 0 4px 10px rgba(75, 127, 50, 0.3);
+        /* الأزرار */
+        .btn-primary, .btn-secondary {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            opacity: 0.9;
         }
 
-        .lang-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(75, 127, 50, 0.5);
-        }
-
-        /* الواجهة الرئيسية */
-        #hero {
-            background: linear-gradient(rgba(20, 33, 61, 0.85), rgba(75, 127, 50, 0.85)), url('2.jpg') center/cover fixed;
+        /* واجهة الموقع (Hero Section) */
+        .hero {
+            /* وضعنا لون خلفية مؤقت لحين وضع صورة المزرعة الحقيقية */
+            background: linear-gradient(rgba(74, 93, 35, 0.85), rgba(74, 93, 35, 0.85)), url('https://via.placeholder.com/1920x600?text=صورة+مزارع+الزيتون') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 120px 20px;
-            margin-bottom: 50px;
-            animation: fadeIn 1.2s ease-in-out;
         }
-
-        #hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--accent-gold);
+        .hero h1 {
+            font-size: 2.8em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-
-        #hero p {
-            font-size: 1.3rem;
+        .hero p {
+            font-size: 1.2em;
             max-width: 800px;
-            margin: 0 auto;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            margin: 0 auto 30px auto;
         }
-
-        /* تأثير الزجاج للأقسام */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 50px 5%;
-            max-width: 1200px;
-            margin: 0 auto 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        section h2 {
-            color: var(--primary-blue);
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        section h2::after {
-            content: "";
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-gold);
-            display: block;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        /* كروت المنتجات الجذابة */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-bottom: 4px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-bottom: 4px solid var(--accent-gold);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            transition: transform 0.4s;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.03);
-        }
-
-        .product-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        /* أزرار التواصل بالأيقونات */
-        .action-btn {
-            display: inline-flex;
-            align-items: center;
+        .hero-buttons {
+            display: flex;
             justify-content: center;
-            gap: 10px;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 15px;
-            transition: all 0.3s;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .whatsapp-btn {
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .facebook-btn {
-            background: linear-gradient(45deg, #1877F2, #0b5ac2);
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
-        }
-
-        .action-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            filter: brightness(1.1);
-        }
-
-        /* الفيديو والخريطة */
-        .video-wrapper, .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 4px solid #fff;
-        }
-
-        .map-container { height: 400px; margin-top: 25px; }
-
-        .map-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary-blue);
-            font-weight: 800;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: rgba(20, 33, 61, 0.05);
-            border-radius: 10px;
-            transition: background 0.3s;
-        }
-
-        .map-link:hover { background: rgba(20, 33, 61, 0.1); }
-
-        #dynamic-qr {
-            border: 4px solid #fff;
-            border-radius: 15px;
-            padding: 10px;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background-color: var(--primary-blue);
-            color: rgba(255,255,255,0.8);
+        /* الأقسام العامة */
+        section {
+            padding: 70px 20px;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            font-size: 1.1rem;
+        }
+        section h2 {
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+            text-align: right;
+            border-top: 4px solid var(--secondary-color);
+        }
+        .feature-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* الفوتر والتواصل */
+        footer {
+            background-color: #2c3e18;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
         }
-
-        /* تجاوب الموبايل */
-        @media (max-width: 768px) {
-            #hero h1 { font-size: 2.2rem; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px;}
-            nav ul li { margin: 5px; }
-            .action-btn { width: 100%; margin-left: 0; margin-bottom: 10px;}
+        footer p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <img src="FB_IMG_1771204068108.jpg" alt="شعار السليمانية إيجيبت">
-        </div>
+        <div class="logo">السليمانية إيجيبت</div>
         <nav>
             <ul>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> من نحن</a></li>
-                <li><a href="#video-section"><i class="fas fa-play-circle"></i> جولة بالمصنع</a></li>
-                <li><a href="#products"><i class="fas fa-box-open"></i> منتجاتنا</a></li>
-                <li><a href="#contact"><i class="fas fa-headset"></i> تواصل معنا</a></li>
-                <li><a href="index-en.html" class="lang-btn"><i class="fas fa-globe"></i> English</a></li> 
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">لماذا نحن؟</a></li>
+                <li><a href="#products">منتجاتنا</a></li>
+                <li><a href="#export">خدمات التصدير</a></li>
             </ul>
         </nav>
+        <a href="#contact" class="btn-primary">اطلب تسعيرة</a>
     </header>
 
-    <section id="hero">
-        <h1>ملوك الزيتون المصري للأسواق العالمية</h1>
-        <p>متخصصون في إنتاج وتصدير أفخر أنواع مخللات الزيتون وزيت الزيتون البكر بأعلى مواصفات الجودة التصديرية التي تليق بشركائنا حول العالم.</p>
-    </section>
-
-    <section id="about" class="glass-panel" style="text-align: center;">
-        <h2>عن كيان السليمانية</h2>
-        <p style="font-size: 1.2rem; line-height: 2; color: #444;">
-            "السليمانية إيجيبت للصناعات الغذائية والتصدير" هي قلعة زراعية وصناعية رائدة، تتخصص في إعداد وتخليل وتصدير أجود أنواع زيتون المائدة المصري للأسواق العربية والعالمية. انطلاقاً من مصانعنا المجهزة بأحدث التقنيات على طريق وادي النطرون - العلمين (مدخل العدالة)، نقدم لشركائنا تشكيلة واسعة ومتميزة تشمل: <strong>الزيتون العجيزي، البيكوال، المنزانيلو، الكالاماتا، والدولسي</strong>.
-        </p>
-    </section>
-
-    <section id="video-section" class="glass-panel" style="text-align: center;">
-        <h2><i class="fas fa-film" style="color: var(--accent-gold);"></i> الفيديو التعريفي</h2>
-        <p style="margin-bottom: 25px; font-size: 1.1rem; color: #555;">تعرف عن قرب على خطوط الإنتاج ومعايير الجودة العالمية في مصانعنا</p>
-        <div class="video-wrapper">
-            <video width="100%" controls preload="metadata" poster="3.jpg">
-                <source src="1770053768521.mp4" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو.
-            </video>
+    <section class="hero" id="home">
+        <h1>السليمانية إيجيبت.. جودة مصرية بمواصفات تصدير عالمية</h1>
+        <p>نوفر للسوق الليبي والأسواق العربية أجود منتجات الزيتون، مدعومين بخبرة واسعة في إدارة آلاف الأفدنة الزراعية، ومعايير موثقة بشهادات جودة دولية لضمان منتج متميز يثق به عملاؤك.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">تواصل مع قسم التصدير</a>
+            <a href="#products" class="btn-secondary">تصفح كتالوج المنتجات</a>
         </div>
     </section>
 
-    <section id="products" class="glass-panel">
-        <h2>منتجاتنا التصديرية</h2>
-        <div class="products-grid">
-            
-            <div class="product-card">
-                <img src="3.jpg" alt="مخللات الزيتون الفاخرة">
-                <h3>مخللات الزيتون الفاخرة</h3>
-                <p style="color: #666; margin-bottom: 10px;">تشكيلة متكاملة للتصدير (عزيزي، تفاحي، بيكوال، منزانيلو، كلاماتا).</p>
-                <p style="margin-bottom: 15px;"><strong><i class="fas fa-box"></i> التعبئة:</strong> براميل، عبوات بلاستيكية، وبرطمانات.</p>
-                <a href="https://wa.me/201221663604" class="action-btn whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> اطلب تسعير المخللات
-                </a>
+    <section id="about">
+        <h2>لماذا تختار السليمانية إيجيبت؟</h2>
+        <div class="features">
+            <div class="feature-box">
+                <h3>🌱 إنتاجية ضخمة ومستدامة</h3>
+                <p>إشراف مباشر وخبرة هندسية في إدارة مساحات زراعية شاسعة تتجاوز 1000 فدان في وادي النطرون، العلمين، والمُغرة، مما يضمن تلبية الطلبات التصديرية الكبيرة بأريحية.</p>
             </div>
-
-            <div class="product-card">
-                <img src="4.jpg" alt="زيت زيتون بكر ممتاز">
-                <h3>زيت زيتون بكر ممتاز</h3>
-                <p style="color: #666; margin-bottom: 10px;">عصرة أولى على البارد، مطابق للمواصفات القياسية العالمية للتصدير.</p>
-                <p style="margin-bottom: 15px;"><strong><i class="fas fa-tint"></i> الحموضة:</strong> أقل من 0.8%.</p>
-                <a href="https://wa.me/201221663604" class="action-btn whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> اطلب تسعير الزيت
-                </a>
+            <div class="feature-box">
+                <h3>🥇 جودة معتمدة دولياً</h3>
+                <p>تخضع منتجاتنا لأدق استراتيجيات الجودة، وعملياتنا مدعومة بشهادات دولية من المجلس الدولي للزيتون، واعتمادات من مركز البحوث الزراعية.</p>
             </div>
-
+            <div class="feature-box">
+                <h3>📦 جاهزية تامة للتصدير</h3>
+                <p>نفهم احتياجات الأسواق المجاورة، ونوفر حلول تعبئة وتغليف مطابقة لمعايير التصدير للسوق الليبي، مع لوجستيات شحن مرنة.</p>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="glass-panel" style="text-align: center;">
-        <h2><i class="fas fa-handshake" style="color: var(--accent-gold);"></i> تواصل معنا للتعاقد</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong><i class="fas fa-map-marker-alt"></i> المقر والمصنع:</strong> طريق وادي النطرون العلمين - مدخل العدالة.</p>
-        <p style="font-size: 1.2rem; color: var(--primary-blue);"><strong><i class="fas fa-phone-alt"></i> المبيعات (مكالمات وواتساب):</strong> 01221663604</p>
-        
-        <div style="margin-top: 30px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
-            <a href="https://wa.me/201221663604" class="action-btn whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp fa-lg"></i> تواصل عبر واتساب
-            </a>
-            <a href="Https://www.facebook.com/share/1CLiCfUu5b/" class="action-btn facebook-btn" target="_blank">
-                <i class="fab fa-facebook fa-lg"></i> تابعنا على فيسبوك
-            </a>
+    <section id="products" style="background-color: #fff;">
+        <h2>زيتون المائدة الفاخر</h2>
+        <p style="max-width: 800px; margin: 0 auto 40px auto; font-size: 1.1em;">نقدم تشكيلة واسعة من أجود أصناف زيتون المائدة، المزروعة والمجهزة لتلبي أذواق المستهلكين وتناسب متطلبات الاستيراد.</p>
+        <div class="features">
+            <div class="feature-box" style="border-top-color: var(--primary-color);">
+                <h3>🫒 أهم الأصناف</h3>
+                <p>الزيتون التفاحي (الأكثر طلباً)، الزيتون العجيزي (الأخضر والأسود)، زيتون الكالاماتا، وأصناف بيكوال ومانزانيللا.</p>
+            </div>
+            <div class="feature-box" style="border-top-color: var(--primary-color);">
+                <h3>🔪 أشكال التجهيز</h3>
+                <p>نوفر الزيتون بحبة كاملة، أو مخلي بدون نواة، أو شرائح ممتازة للمخابز، بالإضافة إلى عجينة الزيتون.</p>
+            </div>
+            <div class="feature-box" style="border-top-color: var(--primary-color);">
+                <h3>🛢️ خيارات التعبئة</h3>
+                <p>براميل بلاستيك (150-170 كجم) للكميات الكبيرة والشحن الآمن، وعبوات زجاجية وصفيح لتجارة التجزئة.</p>
+            </div>
         </div>
-
-        <hr style="margin: 40px auto; border-top: 2px dashed #ccc; width: 70%;">
-        
-        <h3 style="color: var(--primary-blue); margin-bottom: 20px;">موقعنا على الخريطة</h3>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110190.58410294972!2d30.3478546!3d30.4072239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14580cf2785501fb%3A0x6b4ef84c26fc36!2sWadi%20El%20Natrun%2C%20Beheira%20Governorate!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <a href="https://maps.app.goo.gl/DcxbagbDMRkXSpaV9" class="map-link" target="_blank">
-            <i class="fas fa-map-marked-alt fa-lg"></i> اضغط هنا لفتح الموقع على خرائط جوجل
-        </a>
-
-        <hr style="margin: 40px auto; border-top: 2px dashed #ccc; width: 70%;">
-        
-        <h3 style="color: var(--primary-blue); margin-bottom: 10px;">باركود الموقع (QR Code)</h3>
-        <p style="color: #666;">امسح الكود بكاميرا الموبايل لمشاركة الموقع مع شركائك بسهولة</p>
-        <img id="dynamic-qr" src="" alt="باركود الموقع" width="160" height="160">
     </section>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &
+    <footer id="contact">
+        <h2 style="color: var(--secondary-color); margin-bottom: 20px;">هل تبحث عن مورد موثوق لمنتجات الزيتون؟</h2>
+        <p>تواصل معنا الآن للحصول على عرض سعر تنافسي أو لتحديد موعد لقائنا في معرض إكسبو ليبيا.</p>
+        <div style="margin: 30px 0;">
+            <a href="https://wa.me/201000000000" class="btn-primary" target="_blank" style="font-size: 1.2em; padding: 15px 30px;">تواصل معنا عبر الواتساب</a>
+        </div>
+        <div style="margin-top: 40px; font-size: 0.9em; border-top: 1px solid #555; padding-top: 20px;">
+            <p>جميع الحقوق محفوظة © 2026 لشركة السليمانية إيجيبت.</p>
+            <p>البريد الإلكتروني: export@alsuleimania.com | هاتف التصدير: +201000000000</p>
+        </div>
+    </footer>
+
+</body>
+</html>
