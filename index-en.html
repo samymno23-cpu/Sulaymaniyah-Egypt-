@@ -1,142 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suleimania Egypt | Exporting Premium Pickled Olives & Olive Oil</title>
-    <meta name="description" content="Suleimania Egypt is a leading exporter of premium pickled table olives (Azizy, Picual, Manzanillo, Kalamata) and extra virgin olive oil. Located on Wadi El Natrun Rd, Egypt.">
-    
+    <title>Sulaymaniyah Egypt | Olive Oil & Pickled Olives Export</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #192a56;
-            --accent-gold: #fbc531;
-            --olive-green: #3d6e28;
-            --light-bg: #f9f9f9;
+            --primary-gold: #D4AF37;
+            --olive-green: #3B5323;
+            --dark-bg: #0A0A0A;
+            --text-light: #F5F5F5;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--light-bg); color: #333; line-height: 1.6; position: relative; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('1.jpg'); background-size: cover; background-position: center; opacity: 0.08; z-index: -1; pointer-events: none; }
-        header { background-color: var(--primary-blue); padding: 10px 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 55px; border-radius: 5px; }
-        nav ul { list-style: none; display: flex; align-items: center; }
-        nav ul li { margin-left: 15px; }
-        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-        nav ul li a:hover { color: var(--accent-gold); }
-        .lang-btn { background-color: var(--olive-green); padding: 6px 12px; border-radius: 5px; color: white !important; }
-        #hero { background: linear-gradient(rgba(25, 42, 86, 0.8), rgba(61, 110, 40, 0.8)), url('2.jpg') center/cover; color: #fff; text-align: center; padding: 80px 20px; margin-bottom: 40px; }
-        #hero h1 { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px; }
-        section { padding: 40px 5%; max-width: 1200px; margin: 0 auto 40px; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        section h2 { color: var(--primary-blue); text-align: center; margin-bottom: 25px; border-bottom: 2px solid var(--accent-gold); display: inline-block; padding-bottom: 10px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .product-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center; transition: transform 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
-        .product-card h3 { color: var(--olive-green); margin-bottom: 10px; }
-        .whatsapp-btn, .facebook-btn { display: inline-block; color: white; padding: 10px 20px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px; transition: opacity 0.3s; }
-        .whatsapp-btn { background-color: #25D366; }
-        .facebook-btn { background-color: #1877F2; }
-        .whatsapp-btn:hover, .facebook-btn:hover { opacity: 0.8; }
-        .map-container { width: 100%; height: 350px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-top: 20px; margin-bottom: 15px; }
-        .map-link { display: inline-block; color: var(--primary-blue); font-weight: bold; text-decoration: underline; font-size: 1.1rem; margin-top: 10px; }
-        #dynamic-qr { border: 3px solid var(--primary-blue); border-radius: 10px; padding: 10px; background: white; margin-top: 15px; }
-        footer { background-color: var(--primary-blue); color: white; text-align: center; padding: 20px; margin-top: 40px; }
-        .video-wrapper { max-width: 800px; margin: 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: 3px solid var(--primary-blue); }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-gold);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #ccc;
+        }
+        .cta-button {
+            background-color: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: #111;
+            padding: 30px;
+            border: 1px solid #222;
+            border-radius: 15px;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            border-color: var(--primary-gold);
+        }
+        .card h3 {
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        footer {
+            background: #000;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+        .footer-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="FB_IMG_1771204068108.jpg" alt="Suleimania Egypt Logo">
+<header>
+    <h1>Sulaymaniyah Egypt</h1>
+    <p class="subtitle">Global Excellence in Exporting Premium Olive Oil & Pickled Olives</p>
+    <a href="https://wa.me/201091940551" class="cta-button">Export Inquiries (WhatsApp)</a>
+</header>
+
+<div class="section">
+    <div class="grid">
+        <div class="card">
+            <h3>Extra Virgin Olive Oil</h3>
+            <p>Directly from the heart of Wadi El Natrun. Pure, cold-pressed, and meeting international quality standards.</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#video-section">Video</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="index.html" class="lang-btn">العربية</a></li> 
-            </ul>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <h1>Kings of Egyptian Olives for Global Markets</h1>
-        <p>Specializing in the production and export of premium pickled table olives and extra virgin olive oil with the highest export quality standards.</p>
-    </section>
-
-    <section id="about" style="text-align: center;">
-        <h2>About Us</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8;">
-            "Suleimania Egypt for Food Industries & Export" is a leading agricultural and industrial fortress specializing in the processing, pickling, and exporting of the finest Egyptian table olives to global markets. From our state-of-the-art facilities on the Wadi El Natrun - El Alamein Road, we provide our partners with a premium selection including: <strong>Azizy, Picual, Manzanillo, Kalamata, and Dulce olives</strong>.
-        </p>
-    </section>
-
-    <section id="video-section" style="text-align: center;">
-        <h2>Company Overview Video</h2>
-        <p style="margin-bottom: 20px;">Discover our farms, facilities, and production quality.</p>
-        <div class="video-wrapper">
-            <video width="100%" controls preload="metadata">
-                <source src="1770053768521.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="card">
+            <h3>Finest Pickled Olives</h3>
+            <p>Our specialized pickling techniques preserve the authentic taste and texture for the most demanding markets.</p>
         </div>
-    </section>
-
-    <section id="products">
-        <h2>Our Export Products</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="3.jpg" alt="Premium Pickled Olives">
-                <h3>Premium Pickled Olives</h3>
-                <p>A complete export selection (Azizy, Tuffahi, Picual, Manzanillo, Kalamata).</p>
-                <p><strong>Packaging:</strong> Drums, plastic pails, and glass jars.</p>
-                <a href="https://wa.me/201221663604" class="whatsapp-btn" target="_blank">Request Olives Quote</a>
-            </div>
-            <div class="product-card">
-                <img src="4.jpg" alt="Extra Virgin Olive Oil">
-                <h3>Extra Virgin Olive Oil</h3>
-                <p>First cold-pressed, meeting international standards.</p>
-                <p><strong>Acidity:</strong> Less than 0.8%.</p>
-                <a href="https://wa.me/201221663604" class="whatsapp-btn" target="_blank">Request Oil Quote</a>
-            </div>
+        <div class="card">
+            <h3>Agriculture Expertise</h3>
+            <p>Led by Engineer Sami, providing over 8 years of specialized agricultural management and high-yield production.</p>
         </div>
-    </section>
+    </div>
+</div>
 
-    <section id="contact" style="text-align: center;">
-        <h2>Contact Us for Export Orders</h2>
-        <p><strong>Headquarters & Factory:</strong> Wadi El Natrun - El Alamein Road (Al Adala Entrance), Egypt.</p>
-        <p><strong>Sales & WhatsApp:</strong> +201221663604</p>
-        
-        <div style="margin-top: 20px;">
-            <a href="https://wa.me/201221663604" class="whatsapp-btn" style="font-size: 1.1rem;" target="_blank">Contact via WhatsApp</a>
-            <a href="Https://www.facebook.com/share/1CLiCfUu5b/" class="facebook-btn" style="font-size: 1.1rem; margin-left: 10px;" target="_blank">Follow us on Facebook</a>
-        </div>
-
-        <hr style="margin: 40px 0; border-top: 1px solid #ddd;">
-        
-        <h3 style="color: var(--primary-blue); margin-bottom: 20px;">Our Location</h3>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110190.58410294972!2d30.3478546!3d30.4072239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14580cf2785501fb%3A0x6b4ef84c26fc36!2sWadi%20El%20Natrun%2C%20Beheira%20Governorate!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <a href="https://maps.app.goo.gl/DcxbagbDMRkXSpaV9" class="map-link" target="_blank">📍 Click here to open in Google Maps</a>
-
-        <hr style="margin: 40px 0; border-top: 1px solid #ddd;">
-        <h3 style="color: var(--primary-blue); margin-bottom: 10px;">Website QR Code</h3>
-        <p>Scan the code with your phone camera to easily share our website.</p>
-        <img id="dynamic-qr" src="" alt="Website QR Code" width="150" height="150">
-    </section>
-
-    <footer>
-        <p>All Rights Reserved © 2026 Suleimania Egypt for Food Industries & Export.</p>
-    </footer>
-
-    <script>
-        window.onload = function() {
-            var currentUrl = encodeURIComponent(window.location.href);
-            document.getElementById('dynamic-qr').src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + currentUrl;
-        };
-    </script>
+<footer>
+    <p>&copy; 2026 Sulaymaniyah Egypt. All Rights Reserved.</p>
+    <p>Wadi El Natrun - Al Alamein Road, Egypt</p>
+    <p>Contact Us: <a href="mailto:Sulaymaniyah223@gmail.com" class="footer-link">Sulaymaniyah223@gmail.com</a></p>
+    <br>
+    <a href="index.html" class="footer-link">اللغة العربية</a>
+</footer>
 
 </body>
 </html>
