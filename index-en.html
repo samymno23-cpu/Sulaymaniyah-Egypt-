@@ -1,137 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sulaymaniyah Egypt | Olive Oil & Pickled Olives Export</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Sulaymaniyah Egypt | Exporting Pickled Olives & Olive Oil</title>
+    <meta name="description" content="Sulaymaniyah Egypt is a leader in exporting pickled olives (Agizi, Picual, Manzanilla, Kalamata, Dolci) and extra virgin olive oil. Located on Wadi El Natrun - El Alamein Road.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary-gold: #D4AF37;
-            --olive-green: #3B5323;
-            --dark-bg: #0A0A0A;
-            --text-light: #F5F5F5;
+            --primary-blue: #14213d;
+            --accent-gold: #fca311;
+            --olive-green: #4b7f32;
+            --light-bg: #f8f9fa;
         }
-        body {
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
         }
-        header {
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.8;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100vw;
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
+            background-image: url('1.jpg'); 
+            background-size: cover; 
             background-position: center;
+            opacity: 0.06; 
+            z-index: -1; 
+            pointer-events: none; 
+        }
+
+        header {
+            background-color: rgba(20, 33, 61, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            border-bottom: 5px solid var(--primary-gold);
         }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+
+        .logo img {
+            max-height: 60px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-gold);
+            padding: 2px;
+            background-color: white;
         }
-        .subtitle {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            color: #ccc;
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
         }
-        .cta-button {
-            background-color: var(--primary-gold);
-            color: var(--dark-bg);
-            padding: 15px 40px;
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
+            font-weight: 600;
             font-size: 1.1rem;
-            transition: 0.3s;
-            display: inline-block;
         }
-        .cta-button:hover {
-            background-color: #fff;
-            transform: scale(1.05);
+
+        .lang-btn {
+            background: linear-gradient(45deg, var(--olive-green), #3d6e28);
+            padding: 8px 18px;
+            border-radius: 25px;
+            color: white !important;
         }
-        .section {
-            padding: 80px 20px;
+
+        #hero {
+            background: linear-gradient(rgba(20, 33, 61, 0.85), rgba(75, 127, 50, 0.85)), url('2.jpg') center/cover fixed;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            margin-bottom: 50px;
+        }
+
+        #hero h2.company-name {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 50px 5%;
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
-        .grid {
+
+        section h2 {
+            color: var(--primary-blue);
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
-        .card {
-            background: #111;
-            padding: 30px;
-            border: 1px solid #222;
+
+        .product-card {
+            background: #fff;
             border-radius: 15px;
-            transition: 0.3s;
+            padding: 25px;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--accent-gold);
         }
-        .card:hover {
-            border-color: var(--primary-gold);
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
-        .card h3 {
-            color: var(--primary-gold);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        footer {
-            background: #000;
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-        .footer-link {
-            color: var(--primary-gold);
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            padding: 12px 25px;
             text-decoration: none;
+            border-radius: 30px;
             font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .whatsapp-btn { background: linear-gradient(45deg, #25D366, #128C7E); }
+        .facebook-btn { background: linear-gradient(45deg, #1877F2, #0b5ac2); }
+
+        .video-wrapper, .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 4px solid #fff;
+        }
+
+        .map-container { height: 400px; margin-top: 25px; }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.2rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Sulaymaniyah Egypt</h1>
-    <p class="subtitle">Global Excellence in Exporting Premium Olive Oil & Pickled Olives</p>
-    <a href="https://wa.me/201091940551" class="cta-button">Export Inquiries (WhatsApp)</a>
-</header>
-
-<div class="section">
-    <div class="grid">
-        <div class="card">
-            <h3>Extra Virgin Olive Oil</h3>
-            <p>Directly from the heart of Wadi El Natrun. Pure, cold-pressed, and meeting international quality standards.</p>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Sulaymaniyah Logo">
         </div>
-        <div class="card">
-            <h3>Finest Pickled Olives</h3>
-            <p>Our specialized pickling techniques preserve the authentic taste and texture for the most demanding markets.</p>
-        </div>
-        <div class="card">
-            <h3>Agriculture Expertise</h3>
-            <p>Led by Engineer Sami, providing over 8 years of specialized agricultural management and high-yield production.</p>
-        </div>
-    </div>
-</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#video-section">Factory Tour</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="lang-btn">العربية</a></li> 
+            </ul>
+        </nav>
+    </header>
 
-<footer>
-    <p>&copy; 2026 Sulaymaniyah Egypt. All Rights Reserved.</p>
-    <p>Wadi El Natrun - Al Alamein Road, Egypt</p>
-    <p>Contact Us: <a href="mailto:Sulaymaniyah223@gmail.com" class="footer-link">Sulaymaniyah223@gmail.com</a></p>
-    <br>
-    <a href="index.html" class="footer-link">اللغة العربية</a>
-</footer>
+    <section id="hero">
+        <h2 class="company-name">Sulaymaniyah Egypt for Food Industries</h2>
+        <h1>Kings of Egyptian Olives for Global Markets</h1>
+        <p>Specialists in producing and exporting the finest types of pickled olives and extra virgin olive oil with the highest export quality standards.</p>
+    </section>
 
+    <section id="about" class="glass-panel" style="text-align: center;">
+        <h2>About Sulaymaniyah</h2>
+        <p>
+            "Sulaymaniyah Egypt for Food Industries and Export" is a leading agricultural and industrial fortress, specializing in preparing, pickling, and exporting the finest Egyptian table olives to international markets.
+        </p>
+    </section>
+
+    <section id="video-section" class="glass-panel" style="text-align: center;">
+        <h2>Introductory Video</h2>
+        <div class="video-wrapper">
+            <video width="100%" controls preload="metadata" poster="3.jpg">
+                <source src="1770053768521.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section id="products" class="glass-panel">
+        <h2>Our Olive Varieties</h2>
+        <div id="product-container" class="products-grid">
+            </div>
+    </section>
+
+    <section class="glass-panel">
+        <h2>Packaging & Supply Services</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="3.jpg" alt="Pickled Olives">
+                <h3>Premium Pickled Olives</h3>
+                <p>Packaging: Barrels, Plastic containers, and Jars.</p>
+                <a href="https://wa.me/201221663604" class="action-btn whatsapp-btn" target="_blank">Sales WhatsApp 1</a>
+            </div>
+            <div class="product-card">
+                <img src="4.jpg" alt="Olive Oil">
+                <h3>Extra Virgin Olive Oil</h3>
+                <p>First cold press, acidity less than 0.8%.</p>
+                <a href="https://wa.me/201112243660" class="action-btn whatsapp-btn" target="_blank">Sales WhatsApp 2</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="glass-panel" style="text-align: center;">
+        <h2>Contact Us for Contracts</h2>
+        <p><strong>Headquarters & Factory:</strong> Wadi El Natrun - El Alamein Road, Adala Entrance.</p>
+        <p style="font-size: 1.3rem; color: var(--primary-blue); font-weight: bold; margin-top: 15px;">
+            <i class="fas fa-phone-alt"></i> Sales 1: +201221663604 <br>
+            <i class="fas fa-phone-alt"></i> Sales 2: +201112243660
+        </p>
+        
+        <div style="margin-top: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+            <a href="https://wa.me/201221663604" class="action-btn whatsapp-btn" target="_blank">WhatsApp 1</a>
+            <a href="https://wa.me/201112243660" class="action-btn whatsapp-btn" target="_blank" style="background: linear-gradient(45deg, #25D366, #55efc4);">WhatsApp 2</a>
+            <a href="Https://www.facebook.com/share/1CLiCfUu5b/" class="action-btn facebook-btn" target="_blank">Facebook</a>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3434.33142750865!2d30.1554444!3d30.5963889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDM1JzQ3LjAiTiAzMMKwMDknMTkuNiJF!5e0!3m2!1sen!2seg!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <h3 style="margin-bottom: 10px;">Location QR Code</h3>
+            <img id="dynamic-qr" src="" alt="QR Code" width="160">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Sulaymaniyah Egypt for Food Industries. All Rights Reserved.</p>
+        <p>Email: Sulaymaniyah223@gmail.com</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            var currentUrl = encodeURIComponent(window.location.href);
+            document.getElementById('dynamic-qr').src = "https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=" + currentUrl;
+        };
+    </script>
+    <script src="products.js"></script>
 </body>
 </html>
